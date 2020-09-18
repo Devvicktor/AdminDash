@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Menu, Segment, Sidebar } from "semantic-ui-react";
 
 import "./App.css";
-import MenuBar from "./components/Menu";
+
 import Contact from "./views/contacts";
 import Post from "./views/posts";
 import Profile from "./views/profile";

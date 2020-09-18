@@ -1,20 +1,41 @@
-import React from 'react'
-import {Button, Form } from 'semantic-ui-react'
-import MyEditor from '../richTextEditor'
+import React, { useState } from "react";
+import { Button, Form } from "semantic-ui-react";
+import RichTextEditor from "../RichText";
 export default function CreateForm() {
-    return (
-        <div>
-            <Form>
-                <Form.Field>
-                    <Form.Input name='title' type='text' label='Post-title' value='title' placeholder='Ttle' />
-                    <Form.Input name='title' type='text' label='Post-title' value='title' placeholder='Ttle' />
-                    <Form.Input name='title' type='text' label='Post-title' value='title' placeholder='Ttle' />
-                    <Form.Input name='title' type='text' label='Post-title' value='title' placeholder='Ttle' />
-                    <MyEditor/>
-
-                </Form.Field>
-                <Button>Create Post</Button>
-            </Form>
-        </div>
-    )
+  const [values, setValues] = useState({
+    title: "",
+    tag: "",
+  });
+  const handleChange=(event)=>{
+      setValues({
+          ...values,
+          [event.target.name]:event.target.value
+      })
+  }
+  return (
+    <div>
+      <Form>
+        <Form.Field>
+          <Form.Input
+            name="title"
+            value={values.title}
+            type="text"
+            label="Post-title"
+            placeholder="Ttle"
+            onChange={handleChange}
+          />
+          <Form.Input
+            name="tag"
+            value={values.tag}
+            type="text"
+            label="Post-Tag"
+            placeholder="Post tag"
+            onChange={handleChange}
+          />
+        </Form.Field>
+        <RichTextEditor/>e
+        <Button>Create Post</Button>
+      </Form>
+    </div>
+  );
 }

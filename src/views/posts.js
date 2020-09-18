@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 import PostCard from "../components/posts/postCard";
 import CreateForm from "../components/posts/createForm";
-import TextEditor from "../components/richTextEditor";
+
 
 export default function Post() {
   const [open, setOpen] = React.useState(false);
@@ -33,7 +33,7 @@ export default function Post() {
                 <Modal.Header>Create a Post</Modal.Header>
                 <Modal.Content>
                   <CreateForm />
-                
+
                 </Modal.Content>
                 <Modal.Actions>
                   <Button color="teal" onClick={() => setOpen(false)}>

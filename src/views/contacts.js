@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-import { Container, Grid, Loader } from "semantic-ui-react";
+import {  Grid, Loader } from "semantic-ui-react";
 import ContactCard from "../components/contactCard";
 export default function Contact() {
   const { loading, data } = useQuery(CONTACT_QUERY);
